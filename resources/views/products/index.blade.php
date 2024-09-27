@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @foreach ($products as $product)
-                @include('components.product-card', ['product' => $product])
-            @endforeach
-        </div>
+    <div class="product-list">
+        @foreach ($products as $product)
+            <div class="product-card">
+                <h2>{{ $product->name }}</h2>
+                <p>Cost: {{ $product->cost }}</p>
+                <p>Amount: {{ $product->amount }}</p>
+            </div>
+        @endforeach
     </div>
 @endsection
